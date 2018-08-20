@@ -41,7 +41,7 @@ def server():
             if data:
                 c += 1
                 conn.send(b'1')
-                file = open('./temp/img' + str(c) + '.' + sys.argv[1][-3:], 'wb')
+                file = open(sys.argv[0], 'wb')
                 file.write(data)
                 file.close()
             if not data:
@@ -51,8 +51,6 @@ def server():
         conn.send(b'OK\n')
         conn.close()
         print('Done with', host, 'port', remoteport, 'Recieved {} images'.format(c))
-        shutil.rmtree('./temp')
-        os.mkdir('./temp')
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:

@@ -60,5 +60,7 @@ def client():
     print('Total:', t5 - t1)
     print('Throughout:' ,round((BUFSIZE * count * 0.001) / (t5 -t1) , 3), 'K/sec')
 
-if __name__ == '__main__':
-    client()
+
+if __name__ == "__main__" :
+	client()
+
